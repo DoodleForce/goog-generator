@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Goog Generator</title>
+  <title>Goog... Generator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,53 +22,43 @@
     }
 
     .image-header-container {
-      display: inline-block;
+      width: 400px; /* Fixed width for both image and text */
+      margin: 20px auto;
       text-align: center;
     }
 
     .image-header-container img {
-      display: block;
+      width: 100%;
       height: auto;
-      width: 100%; /* Will match parent container width */
+      display: block;
     }
 
     .image-header-container h1 {
-      display: inline-block;
       margin: 0;
       padding: 10px;
       background-color: #f0f0f0;
-      font-size: 48px;
+      font-size: 36px;
       box-sizing: border-box;
-      white-space: nowrap; /* Keeps text on one line */
+      word-wrap: break-word; /* Allow long words to wrap */
     }
   </style>
 </head>
 <body>
 
   <input type="text" id="inputText" placeholder="Type something...">
-  <button onclick="makeHeader()">Make Header</button>
+  <button onclick="makeHeader()">Generate your Goog...</button>
   
   <div class="image-header-container">
-    <h1 id="outputHeader">Your Header Here</h1>
-    <img id="mainImage" src="Untitled14_20250710231000.png" alt="Goog...">
+    <img src="Untitled14_20250710231000.png" alt="Goog...">
+    <h1 id="outputHeader">Goog...</h1>
   </div>
 
   <script>
     function makeHeader() {
       const userInput = document.getElementById("inputText").value;
-      const header = document.getElementById("outputHeader");
-      const image = document.getElementById("mainImage");
-
-      header.textContent = userInput;
-
-      // Wait a moment for text layout to update, then resize image
-      setTimeout(() => {
-        const headerWidth = header.offsetWidth;
-        image.style.width = headerWidth + 'px';
-      }, 10);
+      document.getElementById("outputHeader").textContent = userInput;
     }
   </script>
 
 </body>
 </html>
-some code is ai because i didnt know how to make this
