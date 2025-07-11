@@ -22,23 +22,24 @@
     }
 
     .image-header-container {
-      display: inline-block; /* Shrink to image size */
+      display: inline-block;
       text-align: center;
     }
 
     .image-header-container img {
       display: block;
-      width: 400px; /* or any fixed size your image uses */
       height: auto;
+      width: 100%; /* Will match parent container width */
     }
 
     .image-header-container h1 {
-      width: 100%;
+      display: inline-block;
       margin: 0;
       padding: 10px;
       background-color: #f0f0f0;
       font-size: 48px;
       box-sizing: border-box;
+      white-space: nowrap; /* Keeps text on one line */
     }
   </style>
 </head>
@@ -48,17 +49,26 @@
   <button onclick="makeHeader()">Make Header</button>
   
   <div class="image-header-container">
-    <img src="Untitled14_20250710231000.png" alt="Goog...">
-    <h1 id="outputHeader">Goog...</h1>
+    <h1 id="outputHeader">Your Header Here</h1>
+    <img id="mainImage" src="Untitled14_20250710231000.png" alt="Goog...">
   </div>
 
   <script>
     function makeHeader() {
       const userInput = document.getElementById("inputText").value;
-      document.getElementById("outputHeader").textContent = userInput;
+      const header = document.getElementById("outputHeader");
+      const image = document.getElementById("mainImage");
+
+      header.textContent = userInput;
+
+      // Wait a moment for text layout to update, then resize image
+      setTimeout(() => {
+        const headerWidth = header.offsetWidth;
+        image.style.width = headerWidth + 'px';
+      }, 10);
     }
   </script>
 
 </body>
 </html>
-some code is ai because i have no idea how to make this
+some code is ai because i didnt know how to make this
